@@ -19,20 +19,30 @@ const Formulario = ({ cliente }) => {
       .typeError("El número no es válido"),
     notas: "",
   });
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (valores) => {
     try {
-      const url = "http://localhost:4000/clientes";
-
-      const respuesta = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(values),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      const resultado = await respuesta.json();
+      let respuesta;
+      if (cliente.id) {
+        const url = `http://localhost:4000/clientes/${cliente.id}`;
+        respuesta = await fetch(url, {
+          method: "PUT",
+          body: JSON.stringify(valores),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      } else {
+        const url = "http://localhost:4000/clientes";
+        respuesta = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(valores),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      }
       navigate("/clientes");
+      await respuesta.json();
     } catch (error) {
       console.log(error);
     }
@@ -52,8 +62,8 @@ const Formulario = ({ cliente }) => {
           notas: cliente?.notas ?? "",
         }}
         enableReinitialize={true}
-        onSubmit={(values, { resetForm }) => {
-          handleSubmit(values);
+        onSubmit={(valores, { resetForm }) => {
+          handleSubmit(valores);
           resetForm();
         }}
         validationSchema={nuevoClienteSchema}
