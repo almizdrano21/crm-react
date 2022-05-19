@@ -1,19 +1,28 @@
 {
-  "posts": [
+  "clientes": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "nombre": "Manuel",
+      "empresa": "Manumars",
+      "email": "manuel@gmail.como",
+      "telefono": "609902624",
+      "notas": "empresa de construccion",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombre": "Manuel",
+      "empresa": "Manumars",
+      "email": "manuel@gmail.como",
+      "telefono": "609902624",
+      "notas": "empresa de construccion",
+      "id": 2
+    },
+    {
+      "nombre": "asdj",
+      "empresa": "asjdb",
+      "email": "ajs@sad.com",
+      "telefono": "123",
+      "notas": "e3",
+      "id": 3
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
