@@ -14,7 +14,7 @@ const Layout = () => {
         <nav className="mt-10">
           <Link
             className={
-              urlActual === "/clientes"
+              urlActual === "/"
                 ? "text-blue-300 text-2xl block mt-2 hover:text-blue-300"
                 : "text-white text-2xl block mt-2 hover:text-blue-300"
             }
@@ -24,11 +24,11 @@ const Layout = () => {
           </Link>
           <Link
             className={
-              urlActual === "/clientes/nuevo"
+              urlActual === "/nuevo"
                 ? "text-blue-300 text-2xl block mt-2 hover:text-blue-300"
                 : "text-white text-2xl block mt-2 hover:text-blue-300"
             }
-            to="/clientes/nuevo"
+            to="/nuevo"
           >
             Nuevo Cliente
           </Link>
